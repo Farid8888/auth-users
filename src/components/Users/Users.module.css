@@ -1,0 +1,22 @@
+.users{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 3rem;
+    padding: 5rem;
+}
+
+@media(max-width:770px){
+.users{
+    grid-template-columns: 350px 350px;
+    padding: 1rem;
+    grid-gap:2rem;
+}
+}
+
+@media(max-width:376px){
+    .users{
+        grid-template-columns: 350px;
+        padding: 1rem;
+        grid-gap:2rem;
+    }
+  }

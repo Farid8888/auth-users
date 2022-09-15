@@ -1,0 +1,66 @@
+.header {
+    height: 5rem;
+    background-color: #ab8617;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+  }
+  
+  .logo {
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
+    color: black;
+    margin: 0;
+  }
+  
+  .header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .header li {
+    margin: 0 1rem;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .logout {
+    font: inherit;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border:none;
+    cursor: pointer;
+  }
+  
+  .logout svg{
+    font-size: 2rem;
+    margin-left: 4px;
+    color: rgb(49, 49, 142);
+  }
+  .header a:hover {
+    color: #c291e2;
+  }
+  
+  .logout:hover{
+    color: #38015c;
+  }
+
+ @media(max-width:770px){
+  .userName{
+    display: none;
+  }
+ }

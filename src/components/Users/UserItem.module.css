@@ -1,0 +1,35 @@
+.user{
+    border: 5px solid rgb(32, 32, 154);
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.details{
+    display: flex;
+    flex-direction:row ;
+}
+
+.userDetails{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+@media(max-width:770px){
+    .details{
+       flex-direction: column;
+    }
+    .userDetails{
+        margin-left: 0;
+    }
+    .details img{
+        height: 150px;
+        width: 150px;
+    }
+    }
+
+    @media(max-width:376px){
+        .details img{
+            display: none;
+        }
+      }    

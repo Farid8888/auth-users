@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useContext,useEffect} from 'react'
+import {Routes,Route,Navigate,useNavigate} from 'react-router'
+import AuthContext from './store/auth-context'
+import AuthPage from './pages/AuthPage'
+import UserPage from './pages/UsersPage'
+import Layout from './components/Layout/Layout'
+import PageNotFound from './pages/PageNotFound'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+const isLoggedIn = useContext(AuthContext).isLoggedIn
+const navigate=useNavigate()
+useEffect(()=>{
+if(!isLoggedIn){
+navigate('/auth')
 }
-
-export default App;
+},[isLoggedIn,navigate])
+  return (
+    <Layout>
+      <Routes>
+        <Route path='/auth' element={<AuthPage/>}/>
+        <Route path='/users' element={<UserPage/>}/>
+        <Route path='/' element={<Navigate to={`${isLoggedIn ? '/users' :'/auth'}`} replace/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
+      </Routes>
+    </Layout>
+  )
+}
